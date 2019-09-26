@@ -19,6 +19,8 @@ if __name__ == "__main__":
 	############# User Input ################## 
 	print("+++++++++++++CORPUS++++++++++++++++++")
 	print(JARVIS_TEXT)
+	print("+++++++++++++++++++++++++++++++++++++")
+	print("\n")
 
 	#Continue until user enters DONE
 	while True:
@@ -33,6 +35,7 @@ if __name__ == "__main__":
 		#If user entered less than 3 tokens ask them to re-enter
 		if (len(input_doc)<3):
 			print("Oops You need to enter more words")
+			print("\n")
 		else:
 			#Take only the last 3 tokens as they are the ones that can provide next word
 			input_token = [token.text for token in input_doc[-3:]]
@@ -47,6 +50,7 @@ if __name__ == "__main__":
 				#If dictionary does not have the sequence as key, the user has not entered verbatim from corpus
 				if input_seq not in ngrams_dict.keys():
 					print("The phrase has to be verbatim from the corpus")
+					print("\n")
 					break
 
 				#Get the token from dictionary value
@@ -82,3 +86,4 @@ if __name__ == "__main__":
 				out = out+" "
 			#Print the answer list
 			print(answer)
+			print("\n")
