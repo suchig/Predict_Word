@@ -21,7 +21,6 @@ class TextTokens:
 		self.doc = nlp(text)
 		spans = list(ent for ent in self.doc.ents if ent.label_ != 'WORK_OF_ART')
 
-		spans_match = []
 		matches = matcher(self.doc)
 		spans_match = [self.doc[start:end] for _, start, end in matches]
 
